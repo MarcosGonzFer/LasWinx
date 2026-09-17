@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import teamPhoto from './assets/images/imagenjugadores.jpeg';
+
 import fotoChusy from './assets/images/fotochusy.jpeg';
 import { 
   CLUB_INFO, 
@@ -35,6 +36,7 @@ import { TacticalBoard } from './components/TacticalBoard';
 import { TeamStats } from './components/TeamStats';
 import { LeagueTable } from './components/LeagueTable';
 import { MatchPoll } from './components/MatchPoll';
+import { MatchdaySquad } from './components/MatchdaySquad'; // ← añadir esta línea
 
 export default function App() {
   const [calendarViewMode, setCalendarViewMode] = useState<'WINX_ONLY' | 'ALL_MATCHES'>('WINX_ONLY');
@@ -146,6 +148,9 @@ export default function App() {
             <a href="#tactica" className="text-neutral-300 hover:text-pink-400 hidden lg:block transition-colors">
               Pizarra 5 Inicial
             </a>
+            <a href="#convocatoria" className="text-neutral-300 hover:text-pink-400 hidden lg:block transition-colors">
+  Convocatoria
+</a>
             <a href="#victorias" className="text-neutral-300 hover:text-pink-400 hidden md:block transition-colors">
               Victorias
             </a>
@@ -470,6 +475,10 @@ export default function App() {
         <section id="tactica">
           <TacticalBoard />
         </section>
+
+        <section id="convocatoria">
+  <MatchdaySquad />
+</section>
 
         {/* CALENDARIO COMPLETO (22 JORNADAS) */}
         <section id="calendario" className="bg-neutral-900 border border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
