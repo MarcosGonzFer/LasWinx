@@ -6,6 +6,7 @@ import {
   CLUB_IMAGES, 
   OFFICIAL_SQUAD, 
   LEAGUE_CALENDAR,
+  VICTORY_MOMENTS,
   JornadaData,
   TeamPlayer 
 } from './data/teamData';
@@ -99,6 +100,17 @@ export default function App() {
     return null;
   };
 
+  const hasVictoryMoments = VICTORY_MOMENTS.some(
+    (moment) =>
+      moment.title ||
+      moment.date ||
+      moment.competition ||
+      moment.score ||
+      moment.opponent ||
+      moment.description ||
+      moment.image
+  );
+
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 font-['Outfit',sans-serif] selection:bg-pink-500 selection:text-white pb-12 winx-page-shell">
       <div className="winx-magic-layer" aria-hidden="true">
@@ -133,6 +145,9 @@ export default function App() {
             </a>
             <a href="#tactica" className="text-neutral-300 hover:text-pink-400 hidden lg:block transition-colors">
               Pizarra 5 Inicial
+            </a>
+            <a href="#victorias" className="text-neutral-300 hover:text-pink-400 hidden md:block transition-colors">
+              Victorias
             </a>
             <a href="#plantilla" className="text-neutral-300 hover:text-pink-400 hidden sm:block transition-colors">
               Plantilla
@@ -260,6 +275,73 @@ export default function App() {
         {/* CUENTA ATRÁS EN VIVO AL DEBUT (JORNADA 1) */}
         <section>
           <MatchCountdown targetDateStr="2026-09-27T10:00:00" />
+        </section>
+
+        {/* VICTORIAS / FOTOS DE PARTIDOS GANADOS */}
+        <section id="victorias" className="victory-section bg-neutral-900 border border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-neutral-800">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-pink-400">
+                MOMENTOS VICTORIA
+              </span>
+              <h2 className="text-2xl font-black text-white font-['Montserrat']">
+                Fotos cuando ganamos
+              </h2>
+              <p className="text-xs text-neutral-400 mt-1">
+                Este bloque está preparado para ir añadiendo fotos de cada triunfo sin depender de una base de datos.
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/40 bg-pink-500/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-pink-300">
+              <Trophy className="w-3.5 h-3.5" />
+              0 VICTORIAS AÚN
+            </div>
+          </div>
+
+          {!hasVictoryMoments ? (
+            <div className="victory-empty-panel mt-6" aria-label="Sin victorias aún">
+              <div className="victory-empty-inner" />
+            </div>
+          ) : (
+            <div className="victory-gallery mt-6">
+              {VICTORY_MOMENTS.map((moment) => (
+                <article key={moment.id} className="victory-card group">
+                  <div className="victory-image-wrap">
+                    <img
+                      src={moment.image || CLUB_IMAGES.crest}
+                      alt={moment.title || 'Victoria'}
+                      className="victory-image"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="victory-overlay">
+                      <span className="victory-badge">
+                        <Trophy className="w-3.5 h-3.5" />
+                        Victoria
+                      </span>
+                      <span className="victory-score">{moment.score || 'x - x'}</span>
+                    </div>
+                  </div>
+
+                  <div className="victory-content">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-base font-black text-white font-['Montserrat']">{moment.title || 'Victoria'}</h3>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-pink-300">
+                        {moment.date || 'dd mm yyyy'}
+                      </span>
+                    </div>
+
+                    <div className="mt-2 flex items-center justify-between text-[11px] text-neutral-300">
+                      <span>{moment.competition || 'Competición'}</span>
+                      <span className="font-bold text-pink-400">vs {moment.opponent || 'Rival'}</span>
+                    </div>
+
+                    <p className="mt-3 text-xs leading-5 text-neutral-400">
+                      {moment.description || 'Aquí va la descripción real de la victoria cuando la pongas.'}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* PLANTILLA OFICIAL (14 JUGADORES) */}

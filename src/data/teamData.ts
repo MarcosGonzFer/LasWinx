@@ -61,6 +61,30 @@ export const CLUB_INFO = {
   instagramUrl: 'https://www.instagram.com/laswinxfc',
 };
 
+export interface VictoryMoment {
+  id: string;
+  title: string;
+  date: string;
+  competition: string;
+  score: string;
+  opponent: string;
+  image?: string;
+  description: string;
+}
+
+export const VICTORY_MOMENTS: VictoryMoment[] = [
+  {
+    id: 'v1',
+    title: '',
+    date: '',
+    competition: '',
+    score: '',
+    opponent: '',
+    image: '',
+    description: '',
+  },
+];
+
 export interface MatchPair {
   home: string;
   away: string;
