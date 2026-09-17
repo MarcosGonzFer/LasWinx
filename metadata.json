@@ -1,0 +1,6 @@
+{
+  "name": "Las Winx FC - Getafe",
+  "description": "Página oficial de presentación del equipo de fútbol sala Las Winx FC para la liga local de Getafe. Colores blanco y rosa, equipación Kromex, plantilla y calendario.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
