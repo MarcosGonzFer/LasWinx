@@ -1,33 +1,24 @@
 import React, { useState } from 'react';
-import teamPhoto from './assets/images/imagenjugadores.jpeg';
 
 import fotoChusy from './assets/images/fotochusy.jpeg';
-import { 
-  CLUB_INFO, 
-  CLUB_IMAGES, 
-  OFFICIAL_SQUAD, 
+import {
+  CLUB_INFO,
+  CLUB_IMAGES,
+  OFFICIAL_SQUAD,
   LEAGUE_CALENDAR,
   VICTORY_MOMENTS,
-  JornadaData,
-  TeamPlayer 
+  TeamPlayer,
 } from './data/teamData';
-import { 
-  Instagram, 
-  MapPin, 
-  Search, 
-  Shirt, 
-  Calendar, 
-  Clock, 
+import {
+  Instagram,
+  Search,
+  Shirt,
+  Calendar,
   ExternalLink,
-  ChevronRight,
-  Shield,
-  Layers,
-  Filter,
   Trophy,
   Users,
-  Flame,
   Share2,
-  Check
+  Check,
 } from 'lucide-react';
 import { OfficialCrest } from './components/OfficialCrest';
 import { MatchCountdown } from './components/MatchCountdown';
@@ -36,7 +27,7 @@ import { TacticalBoard } from './components/TacticalBoard';
 import { TeamStats } from './components/TeamStats';
 import { LeagueTable } from './components/LeagueTable';
 import { MatchPoll } from './components/MatchPoll';
-import { MatchdaySquad } from './components/MatchdaySquad'; // ← añadir esta línea
+import { MatchdaySquad } from './components/MatchdaySquad';
 
 export default function App() {
   const [calendarViewMode, setCalendarViewMode] = useState<'WINX_ONLY' | 'ALL_MATCHES'>('WINX_ONLY');
@@ -99,6 +90,7 @@ export default function App() {
 
   const getPlayerCardImage = (player: TeamPlayer) => {
     if (player.name === 'Chusy') return fotoChusy;
+    if (player.name === 'Pablox') return player.photo ?? null;
     return null;
   };
 

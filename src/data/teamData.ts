@@ -33,13 +33,15 @@ export const LEAGUE_TEAMS = [
   'CALIFORNICIO',
 ];
 
+import fotopablox from '../assets/images/fotopablox.jpeg';
+
 export const OFFICIAL_SQUAD: TeamPlayer[] = [
   { id: '1', name: 'Marcos', number: 4, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
   { id: '2', name: 'Serrano', number: 5, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
   { id: '3', name: 'Dani', number: 7, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
   { id: '4', name: 'Pachi', number: 8, size: 'L', position: 'Ala', preferredFoot: 'Zurdo', goals: 0, assists: 0, matchesPlayed: 0 },
   { id: '5', name: 'Ivan', number: 9, size: 'L', position: 'Pívot', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
-  { id: '6', name: 'Pablox', number: 10, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
+  { id: '6', name: 'Pablox', number: 10, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0, photo: fotopablox },
   { id: '7', name: 'Feru', number: 11, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
   { id: '8', name: 'Villa', number: 12, size: 'M', position: 'Ala', preferredFoot: 'Zurdo', goals: 0, assists: 0, matchesPlayed: 0 },
   { id: '9', name: 'Exposi', number: 16, size: 'M', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
@@ -49,6 +51,19 @@ export const OFFICIAL_SQUAD: TeamPlayer[] = [
   { id: '13', name: 'Héctor', number: 47, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
   { id: '14', name: 'Nacho', number: 80, size: 'L', position: 'Portero', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0 },
 ];
+
+export type TeamPlayer = {
+  id: string;
+  name: string;
+  number: number;
+  size: 'M' | 'L';
+  position: 'Portero' | 'Cierre' | 'Ala' | 'Pívot';
+  preferredFoot?: 'Diestro' | 'Zurdo';
+  goals?: number;
+  assists?: number;
+  matchesPlayed?: number;
+  photo?: string;
+};
 
 export const CLUB_INFO = {
   name: 'Las Winx FC',
