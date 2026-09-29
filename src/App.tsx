@@ -89,8 +89,10 @@ export default function App() {
   };
 
   const getPlayerCardImage = (player: TeamPlayer) => {
+    // Prefer player.photo when available (set in data/teamData.ts)
+    if (player.photo) return player.photo;
+    // Fallback to local import for Chusy (legacy)
     if (player.name === 'Chusy') return fotoChusy;
-    if (player.name === 'Pablox') return player.photo ?? null;
     return null;
   };
 
@@ -153,7 +155,7 @@ export default function App() {
               Calendario (22J)
             </a>
             <a href="#pichichi" className="text-neutral-300 hover:text-pink-400 hidden lg:block transition-colors">
-              Pichichi
+              Goles
             </a>
             <a href="#clasificacion" className="text-neutral-300 hover:text-pink-400 hidden xl:block transition-colors">
               Clasificación
@@ -269,10 +271,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* CUENTA ATRÁS EN VIVO AL DEBUT (JORNADA 1) */}
-        <section>
-          <MatchCountdown targetDateStr="2026-09-27T10:00:00" />
-        </section>
+        {/* Cuenta atrás eliminada por petición del usuario */}
 
         {/* VICTORIAS / FOTOS DE PARTIDOS GANADOS */}
         <section id="victorias" className="victory-section bg-neutral-900 border border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
