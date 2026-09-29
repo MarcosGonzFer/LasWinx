@@ -18,6 +18,7 @@ export interface TeamPlayer {
   matchesPlayed?: number;
   yellowCards?: number;
   redCards?: number;
+  targetGoals?: number;
   photo?: string;
 }
 
@@ -44,18 +45,18 @@ import fotovilla from '../assets/images/fotovilla.jpeg';
 export const OFFICIAL_SQUAD: TeamPlayer[] = [
   { id: '1', name: 'Marcos', number: 4, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0, yellowCards: 0, redCards: 0 },
   { id: '2', name: 'Serrano', number: 5, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '3', name: 'Dani', number: 7, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '4', name: 'Pachi', number: 8, size: 'L', position: 'Ala', preferredFoot: 'Zurdo', goals: 1, assists: 2, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '5', name: 'Ivan', number: 9, size: 'L', position: 'Pívot', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '6', name: 'Pablox', number: 10, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotopablox },
-  { id: '7', name: 'Feru', number: 11, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '8', name: 'Villa', number: 12, size: 'M', position: 'Ala', preferredFoot: 'Zurdo', goals: 1, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotovilla },
+  { id: '3', name: 'Dani', number: 7, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 17 },
+  { id: '4', name: 'Pachi', number: 8, size: 'L', position: 'Ala', preferredFoot: 'Zurdo', goals: 1, assists: 2, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 30 },
+  { id: '5', name: 'Ivan', number: 9, size: 'L', position: 'Pívot', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 9 },
+  { id: '6', name: 'Pablox', number: 10, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotopablox, targetGoals: 15 },
+  { id: '7', name: 'Feru', number: 11, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 7 },
+  { id: '8', name: 'Villa', number: 12, size: 'M', position: 'Ala', preferredFoot: 'Zurdo', goals: 1, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotovilla, targetGoals: 18 },
   { id: '9', name: 'Exposi', number: 16, size: 'M', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '10', name: 'Marki', number: 19, size: 'L', position: 'Pívot', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotomarki },
+  { id: '10', name: 'Marki', number: 19, size: 'L', position: 'Pívot', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotomarki, targetGoals: 22 },
   { id: '11', name: 'Pablo', number: 21, size: 'M', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '12', name: 'Chusy', number: 22, size: 'M', position: 'Pívot', preferredFoot: 'Diestro', goals: 2, assists: 1, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotoChusy },
-  { id: '13', name: 'Héctor', number: 47, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '14', name: 'Nacho', number: 80, size: 'L', position: 'Portero', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
+  { id: '12', name: 'Chusy', number: 22, size: 'M', position: 'Pívot', preferredFoot: 'Diestro', goals: 2, assists: 1, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotoChusy, targetGoals: 20 },
+  { id: '13', name: 'Héctor', number: 47, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 11 },
+  { id: '14', name: 'Nacho', number: 80, size: 'L', position: 'Portero', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 6 },
 ];
 
 /* TeamPlayer type is declared above as an interface to avoid duplication. */

@@ -21,7 +21,7 @@ import {
   Check,
 } from 'lucide-react';
 import { OfficialCrest } from './components/OfficialCrest';
-import { MatchCountdown } from './components/MatchCountdown';
+import { Cronicas } from './components/Cronicas';
 import { KitViewer } from './components/KitViewer';
 import { TacticalBoard } from './components/TacticalBoard';
 import { TeamStats } from './components/TeamStats';
@@ -689,6 +689,11 @@ export default function App() {
         {/* PICHICHI & ESTADÍSTICAS */}
         <section id="pichichi">
           <TeamStats />
+        </section>
+
+        {/* CRÓNICAS DE PARTIDOS */}
+        <section id="cronicas">
+          <Cronicas />
         </section>
 
         {/* CLASIFICACIÓN GENERAL */}
