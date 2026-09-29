@@ -45,7 +45,7 @@ import fotovilla from '../assets/images/fotovilla.jpeg';
 export const OFFICIAL_SQUAD: TeamPlayer[] = [
   { id: '1', name: 'Marcos', number: 4, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 0, yellowCards: 0, redCards: 0 },
   { id: '2', name: 'Serrano', number: 5, size: 'L', position: 'Cierre', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0 },
-  { id: '3', name: 'Dani', number: 7, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 17 },
+  { id: '3', name: 'Dani', number: 7, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 1, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 17 },
   { id: '4', name: 'Pachi', number: 8, size: 'L', position: 'Ala', preferredFoot: 'Zurdo', goals: 1, assists: 2, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 30 },
   { id: '5', name: 'Ivan', number: 9, size: 'L', position: 'Pívot', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, targetGoals: 9 },
   { id: '6', name: 'Pablox', number: 10, size: 'L', position: 'Ala', preferredFoot: 'Diestro', goals: 0, assists: 0, matchesPlayed: 1, yellowCards: 0, redCards: 0, photo: fotopablox, targetGoals: 15 },
